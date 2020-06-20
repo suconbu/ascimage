@@ -41,7 +41,11 @@ def main(argv):
     ap.add_argument("-h", "--height", default=0)
     ap.add_argument("-f", "--frame", action="store_true")
     ap.add_argument("-t", "--tone", type=str, default=DEFAULT_TONE)
+    ap.add_argument("-i", "--invert", action="store_true")
     args = ap.parse_args(argv[1:])
+
+    if args.invert:
+        args.tone = args.tone[::-1]
 
     if not os.path.exists(args.filename):
         print(f"{args.filename}: No such file", file=sys.stderr)

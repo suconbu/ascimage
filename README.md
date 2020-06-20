@@ -27,6 +27,7 @@ Option       | Description
 -h, --height | Specify number of rows
 -f, --frame  | Display a frame around the image
 -t, --tone   | Specify a custom tone string like `" .,:;8#"`
+-i, --invert | Invert the tone of image
 
 If only `-w` or `-h` is specified, the aspect ratio of output image will be keep.
 
