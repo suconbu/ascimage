@@ -82,7 +82,7 @@ $ cimage.py emoji.png -w 50 -t " 123745689"
 
 ## Setup
 
-1. Build `imageutil/build/libimageutil.so`
+1. Build `imageutil/bin/libimageutil.so`
 
     ```sh
     $ mkdir imageutil/build

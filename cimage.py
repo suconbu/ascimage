@@ -22,9 +22,10 @@ def output_image(args, data, value_max, width, height, channels):
     for y in range(0, height):
         row = ""
         for x in range(0, width):
-            r = max(0, min(data[index + 0], value_max)) / value_max
-            g = max(0, min(data[index + 1], value_max)) / value_max
-            b = max(0, min(data[index + 2], value_max)) / value_max
+            a = max(0, min(data[index + 3], value_max)) / value_max
+            r = max(0, min(data[index + 0], value_max)) / value_max * a
+            g = max(0, min(data[index + 1], value_max)) / value_max * a
+            b = max(0, min(data[index + 2], value_max)) / value_max * a
             brightness = get_brightness(r, g, b)
             row += tone[min(int(brightness * len(tone)), len(tone) - 1)]
             index += channels
@@ -55,7 +56,7 @@ def main(argv):
     c_width = ctypes.c_int32()
     c_height = ctypes.c_int32()
     c_data = ctypes.POINTER(ctypes.c_uint8)
-    channels = 3
+    channels = 4
 
     c_data = imageutil.load_image(c_filename, c_width, c_height, channels)
 
