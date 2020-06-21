@@ -62,7 +62,7 @@ def main(argv):
     resized_width = max(0, int(args.width))
     resized_height = max(0, int(args.height))
     if resized_width == 0 and resized_height == 0:
-        resized_width = DEFAULT_WIDTH
+        resized_width = min(c_width.value, DEFAULT_WIDTH)
 
     if resized_width == 0:
         resized_width = max(1, int(resized_height * c_width.value / (c_height.value / 2)))
@@ -84,4 +84,3 @@ def main(argv):
 
 if __name__ == "__main__":
     main(sys.argv)
-

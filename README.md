@@ -2,6 +2,10 @@
 
 View image file using ASCII character
 
+Input | Output
+------|-------
+<img src="sample/emoji.png" height="200px"> | <img src="sample/cimage_emoji.png" height="200px">
+
 Supported image formats:
 ```
 JPEG baseline & progressive (12 bpc/arithmetic not supported, same as stock IJG lib)
@@ -18,19 +22,21 @@ PNM (PPM and PGM binary only)
 ## Usage
 
 ```sh
-cimage.py [-w WIDTH] [-h HEIGHT] [-f] [-t TONE] filename
+cimage.py [-w WIDTH] [-h HEIGHT] [-f] [-t TONE] [-i] filename
 ```
 
 Option       | Description
 -------------|------------
--w, --width  | Specify number of columns (Default value: 80)
+-w, --width  | Specify number of columns<br>Default value: min(Original width, 80)
 -h, --height | Specify number of rows
 -f, --frame  | Display a frame around the image
 -t, --tone   | Specify a custom tone string like `" .,:;8#"`
 -i, --invert | Invert the tone of image
 
-If only `-w` or `-h` is specified, the aspect ratio of output image will be keep.
+Note:  
+* If only `-w` or `-h` is specified, the aspect ratio of output image will be keep.
 
+Example of use:  
 ```sh
 # Specifying width and height
 $ cimage.py emoji.png -w 50 -h 10
