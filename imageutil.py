@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
+import os
 import ctypes
 
-imageutil = ctypes.cdll.LoadLibrary("./imageutil/bin/libimageutil.so")
+lib_path = os.path.join(os.path.dirname(__file__), "imageutil/bin/libimageutil.so")
+imageutil = ctypes.cdll.LoadLibrary(lib_path)
 
 imageutil.load_image.restype = ctypes.POINTER(ctypes.c_uint8)
 imageutil.load_image.argtypes = (
