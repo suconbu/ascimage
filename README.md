@@ -1,10 +1,10 @@
-# cimage
+# ascimage
 
 View image file using ASCII character
 
 Input | Output
 ------|-------
-<img src="sample/emoji.png" height="200px"> | <img src="sample/cimage_emoji.png" height="200px">
+<img src="sample/emoji.png" height="200px"> | <img src="sample/ascimage_emoji.png" height="200px">
 
 Supported image formats:
 ```
@@ -22,7 +22,7 @@ PNM (PPM and PGM binary only)
 ## Usage
 
 ```sh
-cimage.py [-w WIDTH] [-h HEIGHT] [-f] [-t TONE] [-i] filename
+ascimage.py [-w WIDTH] [-h HEIGHT] [-f] [-t TONE] [-i] filename
 ```
 
 Option       | Description
@@ -39,7 +39,7 @@ Note:
 Example of use:  
 ```sh
 # Specifying width and height
-$ cimage.py emoji.png -w 50 -h 10
+$ ascimage.py emoji.png -w 50 -h 10
 iiiiiiiii1ttfLLCCCG00000GGCCG0GCCLLLfttttttttt11ii
 iiii1tfLCGGG000000000GCf1i1fCCLLLLLLLLLLLLLLLLLfft
 i1fLGG00000000000000Gt;;;i1tttfLCCCLffffLLLLLLLLLt
@@ -52,7 +52,7 @@ ii1fLLLLLLLLLLLLf111111ii;;;;;;;iii1tfLLCCLft1iiii
 iii1ttfffLLfffffLLLLLLLffLLLLLCLLLLLLftt1iiiiiiiii
 
 # Using custom tone string
-$ cimage.py emoji.png -w 50 -t " 123745689"
+$ ascimage.py emoji.png -w 50 -t " 123745689"
 33333333333337744558888888888885544773333333333333
 33333333337456688888888888666888886654744444447733
 33333333756688888888888864775866665555555555555473
