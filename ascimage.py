@@ -39,11 +39,12 @@ def output_image(args, image):
 def main(argv):
     ap = ArgumentParser(add_help=False)
     ap.add_argument("filename")
-    ap.add_argument("-w", "--width", default=0)
-    ap.add_argument("-h", "--height", default=0)
-    ap.add_argument("-f", "--frame", action="store_true")
-    ap.add_argument("-t", "--tone", type=str, default=DEFAULT_TONE)
-    ap.add_argument("-i", "--invert", action="store_true")
+    ap.add_argument("-w", "--width", default=0, help="Specify number of columns")
+    ap.add_argument("-h", "--height", default=0, help="Specify number of rows")
+    ap.add_argument("-f", "--frame", action="store_true", help="Display a frame around the image")
+    ap.add_argument("-t", "--tone", type=str, default=DEFAULT_TONE, help="Specify a custom tone string like \" .,:;8#\"")
+    ap.add_argument("-i", "--invert", action="store_true", help="Invert the tone of image")
+    ap.add_argument("--help", action="help")
     args = ap.parse_args(argv[1:])
 
     if not os.path.exists(args.filename):
