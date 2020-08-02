@@ -61,7 +61,7 @@ def main(argv):
         resized_width = min(image.width, DEFAULT_WIDTH)
 
     if resized_width == 0:
-        resized_width = max(1, int((resized_height * image.width / image.height / 2)))
+        resized_width = max(1, int((resized_height * image.width / (image.height / 2))))
     elif resized_height == 0:
         resized_height = max(1, int((resized_width * image.height / 2) / image.width))
     else:
